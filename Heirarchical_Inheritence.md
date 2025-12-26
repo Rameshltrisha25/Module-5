@@ -31,6 +31,68 @@ To write a Python program that uses **Hierarchical Inheritance** to input and di
 5. Display collected information using class methods.
 
 ## Program
-Add code here
-## Sample Output
+```
 
+class Details:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def getName(self):
+        return self.name
+
+    def getAge(self):
+        return self.age
+
+
+class Employee(Details):
+    def __init__(self, name, age, employee_id, department):
+        super().__init__(name, age)
+        self.employee_id = employee_id
+        self.department = department
+
+    def getEmployeeDetails(self):
+        return (
+            f"Employee Name: {self.getName()}, "
+            f"Age: {self.getAge()}, "
+            f"Employee ID: {self.employee_id}, "
+            f"Department: {self.department}"
+        )
+
+
+# Derived Class 2
+class Patient(Details):
+    def __init__(self, name, age, patient_id, disease):
+        super().__init__(name, age)
+        self.patient_id = patient_id
+        self.disease = disease
+
+    def getPatientDetails(self):
+        return (
+            f"Patient Name: {self.getName()}, "
+            f"Age: {self.getAge()}, "
+            f"Patient ID: {self.patient_id}, "
+            f"Disease: {self.disease}"
+        )
+
+
+name=input()
+age=int(input())
+employee_id=int(input())
+department=input()
+employee = Employee(name,age,employee_id,department)
+name=input()
+age=int(input())
+patient_id=int(input())
+disease=input()
+patient = Patient(name,age,patient_id,disease)
+
+
+print(employee.getEmployeeDetails())
+print(patient.getPatientDetails())
+```
+## Sample Output
+![WhatsApp Image 2025-12-26 at 8 24 00 PM](https://github.com/user-attachments/assets/38ec113a-d086-4ab1-a29c-5781a8603115)
+
+## RESULT
+Thus , the program has been executed successfully.
